@@ -1,0 +1,3 @@
+[submodule "portfolio-fron"]
+	path = portfolio-fron
+	url = https://github.com/AdriaMartiComas/portfolio-front.git
