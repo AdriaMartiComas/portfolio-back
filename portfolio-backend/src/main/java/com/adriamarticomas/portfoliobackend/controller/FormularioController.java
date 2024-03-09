@@ -7,7 +7,7 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://adriamarticomas.com")
 @RestController
 @RequestMapping("/apiAdri")
 public class FormularioController {
@@ -18,6 +18,7 @@ public class FormularioController {
     @PostMapping("/enviar")
     public void enviarEmail(@RequestBody EmailFormDto emailFormDto) {
         SimpleMailMessage message = new SimpleMailMessage();
+        message.setFrom("info@adriamarticomas.com");
         message.setTo("adriamarticomas@gmail.com");
         message.setSubject("Email desde portfolio! " + emailFormDto.getSubject());
         message.setText("Asunto: " + emailFormDto.getSubject() + "\nEnviado por: " + emailFormDto.getEmail() + "\nMensaje:\n" + emailFormDto.getMessage());
